@@ -1,15 +1,25 @@
+require('dotenv').config({
+  path: __dirname + '/.env' 
+});
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+
 const app = express();
+const PORT = process.env.PORT || 3000;
+console.log("MONGO_URI:" , process.env.MONGO_URI);
+
 
 //  Middleware
 app.use(cors());
 app.use(express.json());
 
 //  Database
-mongoose.connect('mongodb://localhost:27017/authDB')
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+   useUnifiedTopology: true
+})
 .then(() => console.log("MongoDB is connected"))
 .catch(err => console.log(err));
 
