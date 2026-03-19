@@ -11,7 +11,7 @@ console.log("MONGO_URI:" , process.env.MONGO_URI);
 
 //  Middleware
 app.use(cors({
-  origin: "https://outpro-india-2.vercel.app"
+  origin: "https://outpro-india.onrender.com"
 }));
 app.use(express.json());    
 
