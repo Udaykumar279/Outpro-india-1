@@ -10,8 +10,11 @@ console.log("MONGO_URI:" , process.env.MONGO_URI);
 
 
 //  Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://outpro-india-2.vercel.app"
+}));
 app.use(express.json());
+
 
 //  Database
 mongoose.connect(process.env.MONGO_URI)
