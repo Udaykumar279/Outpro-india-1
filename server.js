@@ -11,7 +11,7 @@ console.log("MONGO_URI:" , process.env.MONGO_URI);
 
 //  Middleware
 app.use(cors({
-  origin: "https://outpro-india.onrender.com"
+  origin: "https://outpro-india-2.vercel.app" 
 }));
 app.use(express.json());    
 
@@ -50,7 +50,7 @@ app.post("/api/register", async (req, res) => {
     }
 
     // create user
-    const newUser = new User({
+    const newUser = new User({             
       name,
       email,
       phone,
