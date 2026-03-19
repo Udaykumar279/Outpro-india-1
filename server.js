@@ -13,7 +13,7 @@ console.log("MONGO_URI:" , process.env.MONGO_URI);
 app.use(cors({
   origin: "https://outpro-india-2.vercel.app"
 }));
-app.use(express.json());
+app.use(express.json());    
 
 
 //  Database
